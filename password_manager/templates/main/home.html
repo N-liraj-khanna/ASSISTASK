@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for message in messages %}
+        <div class="div-container">
+            <h1>{{message}}</h1>
+        </div>
+        <br />
+        <br />
+    {% endfor %}
+    {% if location %}
+        {% for row in location %}
+            <div class = "div-container">
+                <h1 style="text-align: center; font-size:40px;color:black"><a class='link' href = "{% url 'view-pass' row.id %}">{{row}}</a></h1>
+            </div>
+            <br/>
+            <br/>
+        {% endfor %}
+    {% else %}
+        <h1 style="text-align: center; font-size:40px"><a class='link' href = "{% url 'create-pass' %}">Store Your First Password!</a></h1>
+    {% endif %}
+{% endblock %}

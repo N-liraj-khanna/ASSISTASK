@@ -1,0 +1,104 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block title %}
+ToDo
+{% endblock %}
+
+{% block content %}
+<style>
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	input::placeholder {
+	  color: #d3d3d3;
+	}
+
+	.submit-button{
+		background-color: #343a40;
+    color: white;
+    box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+  .submit-button:hover{
+    color: rgb(197, 197, 197);
+  }
+	.center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}	
+	.item-row{
+		background-color: #343a40;
+    ;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+  .edit{
+    background-color: rgb(223, 154, 255);
+    border-color: rgb(223, 154, 255);
+  }
+  .delete{
+    background-color: rgb(255, 114, 114);
+    border-color: rgb(255, 114, 114);
+  }
+  a{
+    text-decoration: none;
+    color: aliceblue;
+  }a:hover{
+    text-decoration: none;
+    color: aliceblue;
+  } 
+  .form{
+    height: 130px;
+    position: relative;
+  }
+</style>
+<body>
+  <div class="center-column">
+    <div class="form">
+    <form action="#" method="post" class="form-control">
+      {% csrf_token %}
+      {{form.task}}
+      <input class="btn submit-button" type="submit">
+    </form>
+    </div>
+  {%if error %}
+  <p>The data could not be processed!</p>
+  {% endif %}
+
+  <div class="todos_list todo-list">
+    {% for task in tasks %}
+
+    <div class="item-row">
+      {% if task.completed %}
+        <a style="text-decoration: line-through;" href="{% url 'complete' task.id %}">
+      {% else %}
+        <a href="{% url 'complete' task.id %}">
+      {% endif %}
+          {{task.task}}
+        </a>
+
+      <a class="btn btn-sm edit"  href="{% url 'update' task.id %}">Edit</a>      
+      <a class="btn btn-sm delete" href="{% url 'delete' task.id %}">Delete</a>
+      
+
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</body>
+{% endblock %}

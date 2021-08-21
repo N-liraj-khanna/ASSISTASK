@@ -1,0 +1,32 @@
+{%extends "main/base.html"%}
+{% load static %}
+
+{%block content%}
+    {% for message in messages %}
+        <div class="div-container">
+            <h1>{{message}}</h1>
+        </div>
+        <br />
+        <br />
+    {% endfor %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class = "div-container">
+            <p class = "main-color">
+                <p><label for="id_website_name">Website name:</label> <input type="text"    name="website_name" maxlength="50" required id="id_website_name"></p>
+
+                <p><label for="id_website_link">Website link:</label> <input type="url"         name="website_link" maxlength="180" required id="id_website_link"></p>
+
+                <p><label for="id_website_username">Website username:</label> <input type="text"        name="website_username" maxlength="50" required id="id_website_username"></p>
+
+                <p><label for="id_website_password">Website password:</label> <input type="password"        name="website_password" maxlength="50" required id="id_website_password"></p>
+
+                <p><label for="id_website_notes">Website notes:</label> <input type="text"      name="website_notes" maxlength="50" required id="id_website_notes"></p>
+
+                <p><label for="id_master_password">Master password:</label> <input type="password"      name="master_password" maxlength="55" required id="id_master_password"></p>
+                <input style = "border-radius:10px;"type="submit" value="Submit">
+            </p>
+        </div>
+    </form>
+{%endblock content%}

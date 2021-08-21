@@ -1,0 +1,32 @@
+{% extends "main_base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+Manager
+{% endblock %}
+{% block content %}
+    <style>
+        li{
+            color:aliceblue;
+        }
+        #hint_id_password2{
+            color:aliceblue;
+        }
+    </style>
+    <div class="content-section" style="background-color:#5f788a;color:aliceblue">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4" style="color: aliceblue;">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-dark" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <h5 style="color: aliceblue">Already have an Account?</h5> <a class="ml-2 btn btn-dark" href="{% url 'login' %}">Sign in</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

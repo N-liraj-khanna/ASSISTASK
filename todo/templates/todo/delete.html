@@ -1,0 +1,30 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block title %}
+ToDo
+{% endblock %}
+
+{% block content %}
+<style>
+  body { 
+    color: aliceblue;
+  }
+  button, a, h3{
+    text-decoration: none;
+    color: aliceblue;
+  }
+  h3{
+    margin: 2rem  0;
+  }
+</style>
+<body>
+  <form method="post">{% csrf_token %}
+    <h3>Are you sure you want to delete "{{ object }}"?</h3>
+    <button class="btn btn-primary" type='submit'>Yes</button>
+    <button class="btn btn-danger" type='submit'><a href="{% url 'index' %}">No</a></button>
+  </form>  
+</body>
+{% endblock %}
+
+

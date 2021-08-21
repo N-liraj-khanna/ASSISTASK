@@ -1,0 +1,155 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    margin-top:rem;
+}
+.main-color {
+    color: hsl(358, 100%, 68%);
+}
+
+.u-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.list {
+    float: right;
+    border-left:1px solid #bbb;
+}
+
+.list:last-child {
+    border-right: none;
+}
+
+.list a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.list a:hover:not(.active) {
+    background-color: #111;
+}
+
+.list a:hover {
+    background-color:#ff806f;
+}
+
+.link:link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color:hsl(358, 100%, 68%);
+    text-decoration: none;
+}
+
+.link:active {
+    text-decoration: none;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: hsl(358, 100%, 68%);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-radius:10px;
+    text-align: center;
+  }
+  
+input[type=submit] {
+    width: 100%;
+    background-color: hsl(358, 100%, 68%);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: hsl(358, 100%, 63%);
+}
+.div-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 1px 2px 6px -1px;
+    display: inline-block;
+}
+
+
+.list {
+    float: right;
+    border-left:1px solid #bbb;
+}
+
+.list:last-child {
+    border-right: none;
+}
+
+.list a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.hover-color a:hover:not(.active) {
+    background-color: #111;
+}
+
+.hover-color a:hover {
+    background-color:#556694;
+}
+
+
+.hover-color:link {
+    color: black;
+    text-decoration: none;
+}
+
+.hover-color:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.hover-color:hover {
+    color:#556694;
+    text-decoration: none;
+}
+
+.hover-color:active {
+    text-decoration: none;
+}

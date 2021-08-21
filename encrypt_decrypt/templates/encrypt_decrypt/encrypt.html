@@ -1,0 +1,32 @@
+{% extends "encrypt_decrypt/base.html" %}
+{% load static %}
+{% block title %}
+Encrypt
+{% endblock %}
+
+{% block content %}
+<form method="post" id="encrypt-form"  enctype="multipart/form-data">
+  {% csrf_token %}
+  <span class="display-4">ENCRYPTION</span>
+    {{ form.as_p }}
+    {% if error  %}
+    <div style="color:rgb(252, 94, 94);">{{ error }}</div>
+    {% endif %}
+  <br>
+  <br>
+</form>
+{% if key %}
+<h4>Your Key: </h4>
+<span class="code">{{key}}</span>
+
+<h4 class="mt-4">Your File: </h4>
+<a class="download-button" href="{% static 'upload/lock.lock' %}" download="lock.lock">Download</a>
+{% endif %}
+
+<script>
+  document.getElementById("id_file").onchange = function() {
+    document.getElementById("encrypt-form").submit();
+  };
+</script>
+
+{% endblock %}
